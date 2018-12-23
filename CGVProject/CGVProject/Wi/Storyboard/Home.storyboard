@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Eac-LT-iQg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Animation View Controller-->
+        <scene sceneID="KG9-kj-nSF">
+            <objects>
+                <viewController storyboardIdentifier="AnimationViewController" id="Eac-LT-iQg" customClass="AnimationViewController" customModule="CGVProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MrC-IZ-n2U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mWs-b1-L3V">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yuno1" translatesAutoresizingMaskIntoConstraints="NO" id="Roz-iI-35s">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="600" id="yqC-Pf-vCp"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Roz-iI-35s" secondAttribute="bottom" id="0PK-8C-6VT"/>
+                                    <constraint firstItem="Roz-iI-35s" firstAttribute="top" secondItem="mWs-b1-L3V" secondAttribute="top" id="4yq-lt-tGE"/>
+                                    <constraint firstItem="Roz-iI-35s" firstAttribute="leading" secondItem="mWs-b1-L3V" secondAttribute="leading" id="cfv-L4-sIY"/>
+                                    <constraint firstAttribute="trailing" secondItem="Roz-iI-35s" secondAttribute="trailing" id="zmO-Z6-BHB"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EYi-8Z-ol4" firstAttribute="trailing" secondItem="mWs-b1-L3V" secondAttribute="trailing" id="DXC-mB-LGb"/>
+                            <constraint firstItem="EYi-8Z-ol4" firstAttribute="bottom" secondItem="mWs-b1-L3V" secondAttribute="bottom" id="WjA-eW-1nQ"/>
+                            <constraint firstItem="mWs-b1-L3V" firstAttribute="leading" secondItem="EYi-8Z-ol4" secondAttribute="leading" id="Z06-qj-4cA"/>
+                            <constraint firstItem="mWs-b1-L3V" firstAttribute="top" secondItem="EYi-8Z-ol4" secondAttribute="top" id="nra-jF-rCq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="EYi-8Z-ol4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zqQ-dc-j6D"/>
+                    <connections>
+                        <outlet property="imageView" destination="Roz-iI-35s" id="lj4-97-d4h"/>
+                        <outlet property="scrollView" destination="mWs-b1-L3V" id="G9N-91-azP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EvW-7D-t4v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="143" y="331"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="24L-ub-viq">
+            <objects>
+                <viewController storyboardIdentifier="MainViewController" id="4fd-ai-aEI" customClass="MainViewController" customModule="CGVProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AnO-Mw-Sg7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Ze9-bC-JMM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Mzb-i2-R6m">
+                        <barButtonItem key="leftBarButtonItem" id="QeU-1h-Tlx"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="T5L-dl-iN0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2303" y="193"/>
+        </scene>
+        <!--Home View Navi Controller-->
+        <scene sceneID="nNn-Rs-J8r">
+            <objects>
+                <navigationController storyboardIdentifier="HomeViewNaviController" automaticallyAdjustsScrollViewInsets="NO" id="cIR-V8-FfH" customClass="HomeViewNaviController" customModule="CGVProject" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleAspectFit" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="rfg-hX-MK3">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4fd-ai-aEI" kind="showDetail" id="vMx-0Z-Z3y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wer-HK-fhd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846" y="193"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="yuno1" width="600" height="600"/>
+    </resources>
+</document>

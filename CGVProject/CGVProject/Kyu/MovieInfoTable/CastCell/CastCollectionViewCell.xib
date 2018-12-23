@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="CastCollectionViewCell" id="gTV-IL-0wX" customClass="CastCollectionViewCell" customModule="CGVProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZMb-IM-FRF">
+                        <rect key="frame" x="10" y="10" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="ZMb-IM-FRF" secondAttribute="height" multiplier="1:1" id="dnz-f3-iXC"/>
+                        </constraints>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVA-91-dRr">
+                        <rect key="frame" x="100" y="10" width="270" height="80"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rfy-PG-3L4">
+                                <rect key="frame" x="0.0" y="0.0" width="270" height="30.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.038413284530000001" green="0.023530888539999999" blue="0.38426975390000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="korean name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="IRL-o6-UJr">
+                                <rect key="frame" x="0.0" y="25" width="270" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" text="English name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="dzU-Fi-1Ny">
+                                <rect key="frame" x="0.0" y="49.5" width="270" height="30.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.33839607240000003" blue="0.13360706720000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="ZMb-IM-FRF" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="BLn-ko-40N"/>
+                <constraint firstItem="GVA-91-dRr" firstAttribute="leading" secondItem="ZMb-IM-FRF" secondAttribute="trailing" constant="10" id="Drq-RG-EbM"/>
+                <constraint firstItem="ZMb-IM-FRF" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.8" id="Oki-Tl-b4W"/>
+                <constraint firstAttribute="trailing" secondItem="GVA-91-dRr" secondAttribute="trailing" constant="5" id="mXh-jU-Soe"/>
+                <constraint firstItem="GVA-91-dRr" firstAttribute="top" secondItem="ZMb-IM-FRF" secondAttribute="top" id="nLD-F6-B3P"/>
+                <constraint firstItem="GVA-91-dRr" firstAttribute="bottom" secondItem="ZMb-IM-FRF" secondAttribute="bottom" id="vR8-5V-EEY"/>
+                <constraint firstItem="ZMb-IM-FRF" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="w9U-eT-LXw"/>
+            </constraints>
+            <size key="customSize" width="270" height="110"/>
+            <connections>
+                <outlet property="castEnglishName" destination="dzU-Fi-1Ny" id="KZu-dC-Zcl"/>
+                <outlet property="castImageView" destination="ZMb-IM-FRF" id="g0l-KX-Drd"/>
+                <outlet property="castKoreanName" destination="IRL-o6-UJr" id="Oqf-pT-sKB"/>
+                <outlet property="directorLabel" destination="rfy-PG-3L4" id="uQb-mM-Twd"/>
+            </connections>
+            <point key="canvasLocation" x="60" y="-76.46176911544228"/>
+        </collectionViewCell>
+    </objects>
+</document>
