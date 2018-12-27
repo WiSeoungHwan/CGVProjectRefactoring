@@ -15,28 +15,23 @@ class MainViewController: UIViewController{
     // MARK: SideMenu Instance
     let sideMenu = SideMenu()
     let sideMenuWidth: CGFloat = 300
-//    let aniVC = AnimationViewController()
+    var isSidemenuOpen = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         print("token:",UserManager.singleton.token)
         configure()
-        let leftNaviButton = UIBarButtonItem(image: UIImage(named: "cgvLogo"), style: .plain, target: self, action: #selector(cgvBtnDidTap))
-        self.navigationController?.navigationBar.contentMode = .left
-        self.navigationItem.leftBarButtonItem = leftNaviButton
-        let rightNaviButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action: #selector(showSideMenu))
-        self.navigationItem.rightBarButtonItem = rightNaviButton
-        navigationItem.backBarButtonItem = UIBarButtonItem(image: nil, style: .plain, target: self, action: nil)
-        navigationItem.backBarButtonItem?.tintColor = .black
-//        self.navigationItem.backBarButtonItem = backNaviButton
-//        present(aniVC, animated: false, completion: nil)
     }
-    var isSidemenuOpen = false
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         sideMenu.tableView.reloadData()
         
     }
+    
+    // MARK: @objc Function
+    
     @objc private func cgvBtnDidTap(){
         mainView.didSelectItem(scollTo: 0)
     }
@@ -66,8 +61,15 @@ class MainViewController: UIViewController{
     }
     
     // MARK: static func
+//    private static func presentAnotherViewController(firstPrintMessege: String, storyboardName: String, anotherViewController: UIViewController, viewControllerStoryboardID: String){
+//        print(firstPrintMessege)
+//        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+//        guard let vc = storyboard.instantiateViewController(withIdentifier: viewControllerStoryboardID) as? UIViewController   else {
+//            return print("\(storyboardName) faild")
+//        }
+//        UIApplication.shared.delegate?.window!!.rootViewController?.present(vc, animated: false)
+//    }
     static func showReservationPage(){
-        
         print("showReservationDetail")
         let reservationDetailStoryboard = UIStoryboard(name: "ReservationDetail", bundle: nil)
         guard let reserVC = reservationDetailStoryboard.instantiateViewController(withIdentifier: "ReservationDetailViewController") as? ReservationDetailViewController  else {
@@ -83,8 +85,6 @@ class MainViewController: UIViewController{
         }
         UIApplication.shared.delegate?.window!!.rootViewController?.show(mainVC, sender: nil)
     }
-    
-    
     static func showBookPage(){
         print("showBookPageFunc")
         let bookStoryboard = UIStoryboard(name: "Book", bundle: nil)
@@ -136,8 +136,8 @@ class MainViewController: UIViewController{
     
     private func configure(){
         
-        // MARK: delegate
-        
+        // MARK: Navi setting
+        naviSetting()
         
         // MARK: MainView
         mainView.menuBar.indicatorViewWidthConstraint.constant = view.frame.width / 4
@@ -153,7 +153,17 @@ class MainViewController: UIViewController{
         autolayout()
         
     }
+    private func naviSetting(){
+        let leftNaviButton = UIBarButtonItem(image: UIImage(named: "cgvLogo"), style: .plain, target: self, action: #selector(cgvBtnDidTap))
+        self.navigationController?.navigationBar.contentMode = .left
+        self.navigationItem.leftBarButtonItem = leftNaviButton
+        let rightNaviButton = UIBarButtonItem(image: UIImage(named: "menu"), style: .plain, target: self, action: #selector(showSideMenu))
+        self.navigationItem.rightBarButtonItem = rightNaviButton
+        navigationItem.backBarButtonItem = UIBarButtonItem(image: nil, style: .plain, target: self, action: nil)
+        navigationItem.backBarButtonItem?.tintColor = .black
+    }
     // MARK: Autolayout
+    
     var sideMenuSlideWitdthConstraints: NSLayoutConstraint?
     var sideMenuTrailingConstraints: NSLayoutConstraint?
     private func autolayout(){

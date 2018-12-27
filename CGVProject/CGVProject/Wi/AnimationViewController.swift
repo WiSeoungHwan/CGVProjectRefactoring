@@ -18,11 +18,8 @@ class AnimationViewController: UIViewController {
         UIView.animate(withDuration: 2, animations: {
             self.scrollView.contentOffset.x += 300
         }) { (isFinish) in
-            if isFinish{
-                self.navigationController?.isNavigationBarHidden = false
+            self.navigationController?.isNavigationBarHidden = false
             self.navigationController?.popViewController(animated: false)
-                
-            }
         }
         // Do any additional setup after loading the view.
     }
